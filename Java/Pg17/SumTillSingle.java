@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SumOfDigits {
+public class SumTillSingle{
     public static void main(String[] args){
         @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
@@ -8,7 +8,11 @@ public class SumOfDigits {
         int n = scanner.nextInt();
         int sum = 0;
 
-        while(n > 0){
+        while(n > 0 || sum > 9){
+            if(n == 0){
+                n = sum;
+                sum = 0;
+            }
             sum += n % 10;
             n = n / 10;
         }
